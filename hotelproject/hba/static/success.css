@@ -1,0 +1,29 @@
+body{
+    height: 100vh;
+    background-image: url(/static/image/home.png)
+    
+}
+.main_container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+.success {
+    text-align: center;
+    border: 2px solid #CC8C18;
+    padding: 10px 20px 25px;
+    background-color: #cc8d187a;
+
+}
+.flex2{
+    background: #CC8C18;
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none; 
+
+  }

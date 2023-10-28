@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+{% block content %}
+    {% if messages %}
+    <div class="messages">
+        <ul class="messages-list">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <div class="button-container">
+                    <button type="button" class="toggle-btn" onclick="login()">Login</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="facebook.com"><img src="{% static 'image/fb.png' %}" alt="fb"></a>
+                <img src="{% static 'image/tw.png' %}" alt="tw">
+                <img src="{% static 'image/gp.png' %}" alt="gp">
+            </div>
+            <form action="{% url 'user:login' %}" method="post" id="login" class="input-group">
+                {% csrf_token %}
+                <label for="login-username">Username:</label>
+                <input type="text" class="input-field" id="login-username" name="username" placeholder="Username" required>
+                <br>
+                <label for="login-password">Password:</label>
+                <input type="password" class="input-field" id="login-password" name="password" placeholder="Password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form action="{% url 'users:register' %}" method="POST" class="input-group" id="register">
+                {% csrf_token %}
+                <label for="register-username">Username:</label>
+                <input class="input-field" type="text" name="username" id="register-username" maxlength="150" required>
+                <label for="register-first-name">First name:</label>
+                <input class="input-field" type="text" name="first_name" id="register-first-name" maxlength="50" required>
+                <label for="register-last-name">Last name:</label>
+                <input class="input-field" type="text" name="last_name" id="register-last-name" maxlength="50" required>    
+                <label for="register-email">Email:</label>
+                <input class="input-field" type="email" name="email" id="register-email" required>
+                <label for="register-password">Password:</label>
+                <input class="input-field" type="password" name="password1" id="register-password" required>
+
+                <label for="register-password2">Confirm Password:</label>
+                <input class="input-field" type="password" name="password2" id="register-password2" required>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
+<script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register() {
+        x.style.left = "-400px";
+        y.style.left = "70px";
+        z.style.left = "110px";
+    }
+
+    function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+    }
+</script>
+</body>
+</html>
+

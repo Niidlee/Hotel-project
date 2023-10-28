@@ -1,0 +1,22 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'success.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Page</title>
+</head>
+<body>
+    <div class="main_container">
+        <div class="success">
+            <h1>Booking Successful</h1>
+            <p><strong>Thank you for your booking! Your reservation has been successfully submitted.</strong></p>
+            <a href="{% url 'index' %}" class="flex2">
+                <span>Home</span>
+            </a>
+        </div>        
+    </div>
+</body>
+</html>

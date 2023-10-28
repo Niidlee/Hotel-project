@@ -1,0 +1,82 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="contaiinern">
+          <nav class="navbar flex1">
+            <div class="sticky_logo logo">
+              <img src="{% static 'image/logo.png'%}" alt="" width= "120px";
+              height= "50px">
+            </div>
+    
+            <ul class="nav-menu">
+              <li> <a href="#home">Home</a> </li>
+              <li> <a href="#about">about</a> </li>
+              <li> <a href="#room">room</a> </li>
+              <li> <a href="#services">services</a> </li>
+              <li> <a href="#testimonials">testimonials</a> </li>
+              <li> <a href="#gallary">gallary</a> </li>
+              <li> <a href="#blog">blog</a> </li>
+              <li> <a href="#contact">contact</a> </li>
+              <li> <a href="{% url 'user:profile' %}">profile</a> </li>
+              <li><a href="{% url 'user:login' %}">Login</a></li>    
+            </ul>
+            <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+    
+            <div class="head_contact">
+              <i class="fas fa-phone-volume"></i>
+              <span>+971 4 241 9600</span>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    <div class="container">
+        <div class="box">
+            <img src="assets/rdj.jpeg" alt="">
+            <hr />
+            <h1 class="text-center">{{ request.user|upper }}</h1>
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} {{user_form}}
+              <input
+                type="submit"
+                class="btn btn-block btn-primary"
+                value="Update Profile"
+              />
+            </form>  
+            <ul>
+              <li><i style="font-size:24px" class="fa"></i>
+                  <i style="font-size:24px" class="fa"></i>
+                  <i style="font-size:24px" class="fa"></i></li>
+            </ul>
+        </div>
+        <div class="About">
+            <ul>
+                <h1>My Bookings</h1>
+                
+                <a href="{% url 'user_bookings' %}" class="flex2">
+                    <span>Bookings</span>
+                </a>
+            </ul>
+        </div>
+        <a href="{% url 'index' %}" class="flex2">
+          <span>Home</span>
+        </a>
+    </div>
+</body>
+</html>

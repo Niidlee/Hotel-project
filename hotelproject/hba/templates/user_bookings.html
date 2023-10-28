@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url("/static/image/home.png");
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0; 
+            padding: 0;
+            color:black;
+            background-size: cover;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container1{
+            max-width: 180px;
+            margin: 30px auto;
+            background-color: 	#8d18ccb1;
+            color:white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 250px  auto 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu{
+            display: flex;
+            justify-content: space-around;            
+        }
+        .nav-menu a {
+            padding-right: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            color: black;
+        }
+
+        .nav-menu li {
+            list-style-type: none
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+
+    <div class="container">
+        {% if user_bookings %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Room Number</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in user_bookings %}
+                    <tr>
+                        <td>{{ booking.room_type.name }}</td>
+                        <td>{{ booking.check_in }}</td>
+                        <td>{{ booking.check_out }}</td>
+                        <td>{% if booking.is_booked %}Booked{% else %}Available{% endif %}</td>
+                        <td>
+                            {% if booking.is_booked %}
+                                <a href="{% url 'rooms:delete_booking' booking.id %}">Cancel</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No bookings found.</p>
+        {% endif %}
+    </div>
+    <header class="header">
+        <div class="container1">
+            <nav class="navbar flex1">
+
+    
+                <ul class="nav-menu">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'user:profile' %}">Profile</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+</body>
+
+</html>
