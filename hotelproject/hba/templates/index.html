@@ -52,8 +52,6 @@
           <li> <a href="#about">about</a> </li>
           <li> <a href="#room">room</a> </li>
           <li> <a href="#services">services</a> </li>
-          <li> <a href="#testimonials">testimonials</a> </li>
-          <li> <a href="#gallary">gallary</a> </li>
           <li> <a href="#blog">blog</a> </li>
           <li> <a href="#contact">contact</a> </li>
           <li> <a href="{% url 'user:profile' %}">profile</a> </li>
@@ -398,181 +396,6 @@
     </div>
   </section>
 
-  <section class="customer top" id="testimonials">
-    <div class="container">
-      <div class="heading">
-        <h5>TESTIMONIALS </h5>
-        <h3>What customers say </h3>
-      </div>
-
-      <div class="owl-carousel owl-theme mtop">
-        <div class="item">
-          <div class="rate">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h3>Excellent Swimming</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="admin flex">
-            <div class="img">
-              <img src="{% static 'image/c1.jpg' %}" alt="">
-            </div>
-            <div class="text">
-              <h3>Ayman Jensi</h3>
-              <span>Manager</span>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="rate">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h3>Excellent Swimming</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="admin flex">
-            <div class="img">
-              <img src="{% static 'image/c2.jpg' %}" alt="">
-            </div>
-            <div class="text">
-              <h3>Ayman Jensi</h3>
-              <span>Manager</span>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="rate">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h3>Excellent Swimming</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-            aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="admin flex">
-            <div class="img">
-              <img src="{% static 'image/c3.jpg' %}" alt="">
-            </div>
-            <div class="text">
-              <h3>Ayman Jensi</h3>
-              <span>Manager</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <script>
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: false,
-      dots: false,
-      navText: ["<i class='far fa-long-arrow-alt-left'></i>", "<i class='far fa-long-arrow-alt-right'></i>"],
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 1
-        },
-        1000: {
-          items: 1
-        }
-      }
-    })
-  </script>
-
-
-  <section class="gallary top" id="gallary">
-    <div class="owl-carousel owl-theme">
-      <div class="item">
-        <img src="{% static 'image/g1.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g2.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g3.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g4.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g5.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g1.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g2.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-      <div class="item">
-        <img src="{% static 'image/g3.jpg' %}" alt="">
-        <div class="overlay">
-          <i class="fab fa-instagram"></i>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 0,
-      nav: false,
-      dots: false,
-      autoplay: true,
-      slideTransition: 'linear',
-      autoplayTimeout: 4000,
-      autoplaySpeed: 4000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 3
-        },
-        1000: {
-          items: 5
-        }
-      }
-    })
-  </script>
-
-
   <section class="blog top" id="blog">
     <div class="container">
       <div class="heading">
@@ -697,7 +520,7 @@
             </div>
             <div class="text">
               <h3>Address</h3>
-              <p>205 Fida Walinton, Tongo Street Front The USA</p>
+              <p>Jumeirah 1, Dubai, UAE</p>
             </div>
           </div>
           <div class="icon flex">
@@ -715,7 +538,7 @@
             </div>
             <div class="text">
               <h3>Email</h3>
-              <p>hello@ecorik.com</p>
+              <p>lamer@gmail.com</p>
             </div>
           </div>
         </div>
